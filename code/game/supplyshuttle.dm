@@ -1378,6 +1378,16 @@ GLOBAL_DATUM_INIT(supply_controller, /datum/controller/supply, new())
 
 	if(!GLOB.VehicleElevatorConsole)
 		GLOB.VehicleElevatorConsole = src
+					else
+		check_vehicle_lock()
+
+/obj/structure/machinery/computer/supplycomp/vehicle/proc/check_vehicle_lock()
+	if(!ticker.mode || istype(ticker.mode, /datum/game_mode/extended))
+		return
+	var/datum/game_mode/GM = ticker.mode
+
+	if(GM.marine_starting_num > 199)
+		tank_unlocked = TRUE
 
 /obj/structure/machinery/computer/supplycomp/vehicle/Destroy()
 	GLOB.VehicleElevatorConsole = null
