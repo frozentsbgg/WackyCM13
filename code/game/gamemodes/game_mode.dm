@@ -119,6 +119,9 @@ GLOBAL_VAR_INIT(cas_tracking_id_increment, 0) //this var used to assign unique t
 	if(SSticker.mode)
 		log_game("Game mode set to [SSticker.mode] on the [SSmapping.configs[GROUND_MAP].map_name] map")
 	log_game("Server IP: [world.internet_address]:[world.port]")
+	//turn on destructible terrain if its set in config
+	if(CONFIG_GET(flag/destructible_terrain_roundstart))
+		toggle_destructible_terrain()
 	return TRUE
 
 /datum/game_mode/proc/adjust_ammo_values()
