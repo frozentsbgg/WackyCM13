@@ -60,6 +60,9 @@
 /datum/config_entry/flag/flesh_can_eschar
 	config_entry_value = TRUE
 
+// lets ground walls be broken from roundstart, same thing as the admin toggle
+/datum/config_entry/flag/destructible_terrain_roundstart
+
 /datum/config_entry/flag/allow_synthetic_gun_use
 
 /datum/config_entry/flag/remove_gun_restrictions
